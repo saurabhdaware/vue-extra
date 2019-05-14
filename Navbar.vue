@@ -5,7 +5,7 @@
                 <img v-if="navbar.brand.includes('http') && navbar.brand.includes('//') && navbar.brand.includes('.')" :src="navbar.brand" height="100%">
                 <router-link v-else class="nav-a" to="/" style="font-weight:bold;font-size:14pt;" v-html="navbar.brand" replace></router-link>
             </li>
-            <li v-for="(item,index) in (navbar.defaultAlign == 'left')?navbar.navItems:navbar.navItems.map(item=>{return {...item,align:'right'}}).reverse()" :key="index" :style="(item.align == 'right')?{float:'right'}:{}">
+            <li v-for="(item,index) in getNavItems(navbar.defaultAlign)" :key="index" :style="(item.align == 'right')?{float:'right'}:{}">
                 <a class="nav-a" v-if="item.router == false" :class="item.class" :href="item.href" v-html="item.name"></a>
                 <router-link :to="item.href" v-else :style="item.style" class="nav-a" :class="item.class" v-html="item.name"></router-link>
             </li>
@@ -17,6 +17,17 @@ export default {
     name:'Navbar',
     data(){
         return {
+        }
+    },
+    methods:{
+        getNavItems:function(align){
+            if(align == 'left'){
+                return this.navbar.navItems
+            }else{
+                return this.navbar.navItems.map(item=>{
+                    return {...item,align:'right'}
+                }).reverse()
+            }
         }
     },
     props:{
