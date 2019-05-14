@@ -1,0 +1,25 @@
+{
+  "name": "vue-extra",
+  "version": "1.0.0",
+  "description": "Ready to add extra components for VueJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhdaware/vue-extra.git"
+  },
+  "keywords": [
+    "vue-extra",
+    "vue-plus",
+    "vue",
+    "components"
+  ],
+  "author": "Saurabh Daware",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saurabhdaware/vue-extra/issues"
+  },
+  "homepage": "https://github.com/saurabhdaware/vue-extra#readme"
+}
