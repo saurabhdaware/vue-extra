@@ -1,5 +1,10 @@
 # vue-extra
 Ready to add extra components for VueJS.
+
+[![NPM Version](https://badge.fury.io/js/vue-extra.svg?style=flat)](https://npmjs.org/package/vue-extra)
+
+[![https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-extra)
+
 ## Overview
 
 ### Installation
