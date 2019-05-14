@@ -1,0 +1,1 @@
+console.log("Read documentations for how to use guide : https://github.com/saurabhdaware/vue-extra#readme");
