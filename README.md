@@ -19,7 +19,7 @@ variable "navbar" is defined below in javascript code
 
 
 ### Inside your script tag
-Example :
+Full Example :
 ```javascript
 import Navbar from 'vue-extra/Navbar'
 export default {
@@ -27,6 +27,10 @@ export default {
     return {
       navbar:{
         defaultAlign:'right',  // Default alignment of items in navbar
+        backgroundColor:'#222', // background color of navbar
+        color:'#ddd', // color of items in navbar
+        activeLinkColor:'#f90', // color of .active class link in navbar
+        hoverColor:'#ff0', // color when hovered over item
         brand:'Vue<span style="color:#ccc">Extra</span>',
         shadow:true, // shadow effect on navbar
         navItems:[
@@ -65,6 +69,16 @@ export default {
 
 
 ## REFERRENCE
+
+### Coloring Navbar
+```javascript
+navbar:{
+    backgroundColor:'#222',
+    color:'#ddd',
+    hoverColor:'#fff',
+    activeLinkColor:'#09f'
+}
+```
 
 ### Brand Name
 ```javascript

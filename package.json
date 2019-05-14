@@ -1,7 +1,7 @@
 {
   "name": "vue-extra",
-  "version": "1.0.5",
-  "description": "Ready to add extra components for VueJS",
+  "version": "1.0.7",
+  "description": "Ready made components for VueJS. Make websites without writing HTML/CSS! just JSON configurations and you're done!",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

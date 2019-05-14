@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <Navbar :navbar="navbar" :style="{fontFamily:'arial'}"></Navbar>
+        <Navbar :navbar="navbar" :style="{fontFamily:'arial',borderBottom:'3px solid #09f'}"></Navbar>
         <h1>YO</h1>
         <h1>YO</h1>
         <h1>YO</h1>
@@ -15,6 +15,10 @@ export default {
         return {
             navbar:{
                 defaultAlign:'right',
+                backgroundColor:'#1c1e30',
+                color:'#aaa',
+                activeLinkColor:'#09f',
+                hoverColor:'#99f',
                 brand:'Vue<span style="color:#ccc">Extra</span>',
                 shadow:true,
                 navItems:[

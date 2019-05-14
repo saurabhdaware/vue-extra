@@ -1,13 +1,13 @@
 <template>
-    <nav :class="(navbar.shadow == false)?'vue-extra-navbar':'vue-extra-navbar card'">
+    <nav :class="(navbar.shadow == false)?'vue-extra-navbar':'vue-extra-navbar card'" :style="{backgroundColor:navbar.backgroundColor}">
         <ul>
             <li class="brand" v-if="navbar.brand">
-                <img v-if="navbar.brand.includes('http') && navbar.brand.includes('//') && navbar.brand.includes('.')" :src="navbar.brand" height="100%">
-                <router-link v-else class="nav-a" to="/" style="font-weight:bold;font-size:14pt;" v-html="navbar.brand" replace></router-link>
+                <img v-if="navbar.brand.includes('http') && navbar.brand.includes('//') && navbar.brand.includes('.')" :src="navbar.brand" height="30">
+                <router-link v-else class="nav-a" to="/" style="font-weight:bold;font-size:14pt;color:#fff;" v-html="navbar.brand" replace></router-link>
             </li>
             <li v-for="(item,index) in getNavItems(navbar.defaultAlign)" :key="index" :style="(item.align == 'right')?{float:'right'}:{}">
-                <a class="nav-a" v-if="item.router == false" :class="item.class" :href="item.href" v-html="item.name"></a>
-                <router-link :to="item.href" v-else :style="item.style" class="nav-a" :class="item.class" v-html="item.name"></router-link>
+                <a v-if="item.router == false" :style="item.style" class="nav-a" :class="item.class" :href="item.href" v-html="item.name"></a>
+                <router-link v-else :style="item.style" class="nav-a" :class="item.class" :to="item.href" v-html="item.name"></router-link>
             </li>
         </ul>
     </nav>
@@ -16,8 +16,7 @@
 export default {
     name:'Navbar',
     data(){
-        return {
-        }
+        return {}
     },
     methods:{
         getNavItems:function(align){
@@ -29,6 +28,12 @@ export default {
                 }).reverse()
             }
         }
+    },
+    mounted(){
+        let nav = document.querySelector('nav').style
+        nav.setProperty('--color', this.navbar.color || '#aaa');
+        nav.setProperty('--hoverColor', this.navbar.hoverColor || '#fff');
+        nav.setProperty('--activeLinkColor', this.navbar.activeLinkColor || '#09f');
     },
     props:{
         navbar:{
@@ -66,11 +71,16 @@ export default {
 }
 </script>
 <style scoped>
+nav{
+    --hoverColor:#fff;
+    --color:#aaa;
+    --activeLinkColor:#09f;
+}
 .vue-extra-navbar{
     position:fixed;
     width:100%;
     top:0;left:0;
-    background-color:#1c1e30;
+    background-color:#222;
 }
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -88,9 +98,9 @@ export default {
   float: left;
 }
 
-.vue-extra-navbar > ul > li > .nav-a {
+.vue-extra-navbar > ul > li > .nav-a{
   display: block;
-  color: white;
+  color:var(--color);
   text-align: center;
   padding: 17px 24px;
   font-size:13pt;
@@ -99,11 +109,11 @@ export default {
 }
 
 .vue-extra-navbar > ul > li:not(.brand) > .nav-a:hover{
-    color:#4CAF50;
+    color:var(--hoverColor);
     transition:all .5s ease;
 }
 .vue-extra-navbar > ul > li > .nav-a.active {
-  color: #4CAF50;
-  transition:all .5s ease;
+    color:var(--activeLinkColor);
+    transition:all .5s ease;
 }
 </style>
