@@ -1,5 +1,5 @@
 <template>
-    <nav :class="(navbar.shadow == false)?'vue-extra-navbar':'vue-extra-navbar card'" :style="{backgroundColor:navbar.backgroundColor}">
+    <nav :class="(navbar.shadow == false)?'vue-extra-navbar':'vue-extra-navbar card'" :style="{backgroundColor:navbar.backgroundColor || '#222'}">
         <ul>
             <li class="brand" v-if="navbar.brand">
                 <img v-if="navbar.brand.includes('http') && navbar.brand.includes('//') && navbar.brand.includes('.')" :src="navbar.brand" height="30">
@@ -80,7 +80,6 @@ nav{
     position:fixed;
     width:100%;
     top:0;left:0;
-    background-color:#222;
 }
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
