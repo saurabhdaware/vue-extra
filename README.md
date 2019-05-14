@@ -1,5 +1,6 @@
 # vue-extra
 Ready to add extra components for VueJS.
+## Overview
 
 ### Installation
 `npm install --save vue-extra`
@@ -7,7 +8,7 @@ Ready to add extra components for VueJS.
 ### How to use
 - Currently the module supports vue-extra/Navbar only. However I will be adding some more elements in future.
 
-## Inside your <template></template>
+### Inside your template tag
 ```html
 ...
 <Navbar :navbar="navbar" :style={fontFamily:'arial'}></Navbar>
@@ -17,19 +18,17 @@ Ready to add extra components for VueJS.
 variable "navbar" is defined below in javascript code
 
 
-## Inside <script></script> tag
+### Inside your script tag
 Example :
 ```javascript
 import Navbar from 'vue-extra/Navbar'
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       navbar:{
-        defaultAlign:'right',
+        defaultAlign:'right',  // Default alignment of items in navbar
         brand:'Vue<span style="color:#ccc">Extra</span>',
-        shadow:true,
+        shadow:true, // shadow effect on navbar
         navItems:[
             {
                 name:'Home',
@@ -39,7 +38,7 @@ export default {
             {
                 name:'News',
                 href:"https://github.com/saurabhdaware",
-                router:false,
+                router:false, // By default all navItems are rendered as <router-link> by setting router:false we tell code to render element as <a> instead.
             },
             {
                 name:'Contact',
@@ -63,3 +62,36 @@ export default {
 }
 
 ```
+
+
+## REFERRENCE
+
+### Brand Name
+```javascript
+navbar:{
+    brand:'CompanyName'
+}
+```
+or
+```javascript
+navbar:{
+    brand:'https://image.com/logo.png' // Link of image - This will be rendered as an image
+}
+```
+
+### Drop shadow
+```javascript
+navbar:{
+    shadow:true // false
+}
+```
+
+### Right aligned navigation bar
+```javascript
+navbar:{
+    defaultAlign:'right' // 'left'
+}
+```
+
+## Screenshot
+![vue-extra/Navbar](https://res.cloudinary.com/saurabhdaware/image/upload/v1557839367/npm/vue-extra/vueextra.png)
