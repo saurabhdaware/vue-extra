@@ -1,5 +1,5 @@
 <template>
-    <nav :class="(navbar.shadow == false)?'vue-extra-navbar':'vue-extra-navbar card'" :style="{backgroundColor:navbar.backgroundColor || '#222'}">
+    <nav ref="nav" :class="(navbar.shadow == false)?'vue-extra-navbar':'vue-extra-navbar card'" :style="{backgroundColor:navbar.backgroundColor || '#222'}">
         <ul>
             <li class="brand" v-if="navbar.brand">
                 <img v-if="(/\.(gif|jpg|jpeg|tiff|png|webp)$/i).test(navbar.brand)" :src="navbar.brand" height="40" style="padding:5px 15px;">
@@ -19,6 +19,10 @@ export default {
         return {
             defaultOptions:{
                 defaultAlign:'right',
+                backgroundColor:'#222',
+                color:'#ccc',
+                activeLinkColor:'#09f',
+                hoverColor:'#a9f',
                 brand:'Vue<span style="color:#ccc">Extra</span>',
                 shadow:true,
                 navItems:[
@@ -49,14 +53,29 @@ export default {
         }
     },
     methods:{
-        
+        setColors:function(){
+            let bodyStyle = document.body.style
+            bodyStyle.setProperty('--color', this.navbar.color || '#aaa');
+            bodyStyle.setProperty('--hoverColor', this.navbar.hoverColor || '#fff');
+            bodyStyle.setProperty('--activeLinkColor', this.navbar.activeLinkColor || '#09f');
+        }
+    },
+    watch:{
+        immediate:true,
+        navbar:{
+            handler(val){
+                console.log(val);
+                this.setColors();
+            },
+            deep:true
+        }
     },
     mounted(){
         this.navbar = {...this.defaultOptions,...this.navbar}
-        let nav = document.querySelector('nav').style
-        nav.setProperty('--color', this.navbar.color || '#aaa');
-        nav.setProperty('--hoverColor', this.navbar.hoverColor || '#fff');
-        nav.setProperty('--activeLinkColor', this.navbar.activeLinkColor || '#09f');
+        this.setColors();
+        // setTimeout(()=>{
+        //     this.navbar.color = '#f30'
+        // },3000)
     },
     props:{
         navbar:{
@@ -78,7 +97,7 @@ export default {
 }
 </script>
 <style scoped>
-nav{
+body{
     --hoverColor:#fff;
     --color:#aaa;
     --activeLinkColor:#09f;

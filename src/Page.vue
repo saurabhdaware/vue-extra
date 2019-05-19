@@ -14,13 +14,13 @@ export default {
     data(){
         return {
             navbar:{
-                defaultAlign:'right',
+                // defaultAlign:'right',
                 backgroundColor:'#1c1e30',
-                color:'#aaa',
-                activeLinkColor:'#09f',
-                hoverColor:'#99f',
-                brand:'Vue<span style="color:#ccc">Extra</span>',
-                shadow:true,
+                // color:'#f30',
+                activeLinkColor:'#f90',
+                // hoverColor:'#99f',
+                // brand:'Vue<span style="color:#ccc">Extra</span>',
+                // shadow:true,
                 navItems:[
                     {
                         name:'Home',
@@ -31,22 +31,16 @@ export default {
                         name:'Readme',
                         href:"https://github.com/saurabhdaware",
                         router:false,
-                    },
-                    {
-                        name:'Blog',
-                        href:"blog",
-                    },
-                    {
-                        name:'Login',
-                        href:'#login',
-                        align:'right',
-                        style:{fontWeight:'bold'}
                     }
                     
                 ]
 
             }
         }
+    },
+    mounted(){
+        setTimeout(()=>{
+        },2000);
     },
     components:{
         Navbar
