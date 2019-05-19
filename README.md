@@ -5,6 +5,24 @@ Ready to add extra components for VueJS.
 
 [![https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-extra)
 
+# Table of Contents
+- [Overview](#overview)
+  - [Installation](#installation)
+  - [How to use](#how-to-use)
+    - [Inside your template tag](#inside-your-template-tag)
+    - [Inside your script tag](#inside-your-script-tag)
+- [Referrence](#referrence)
+  - [Navbar](#navbar)
+    - [Color Navbar](#color-navbar)
+    - [Change Brand Name](#change-brand-name)
+    - [Drop Shadow](#drop-shadow)
+    - [Right Aligned Items](#right-aligned-items)
+    - [Change property after set](#change-property-after-set)
+  - [Header](#header)
+- [Contribution](#contribution)
+- [Screenshot](#screenshot)
+
+
 # Overview
 
 ### Installation
@@ -13,7 +31,7 @@ Ready to add extra components for VueJS.
 ### How to use
 - Currently the module supports vue-extra/Navbar only. However I will be adding some more elements in future.
 
-### Inside your template tag
+#### Paste inside your template tag
 ```html
 ...
 <Navbar :navbar="navbar" :style={fontFamily:'arial'}></Navbar>
@@ -23,7 +41,7 @@ Ready to add extra components for VueJS.
 variable "navbar" is defined below in javascript code
 
 
-### Inside your script tag
+#### Paste inside your script tag
 Full Example :
 ```javascript
 import Navbar from 'vue-extra/Navbar'
@@ -77,7 +95,7 @@ export default {
 
 ## Navbar
 
-### Coloring Navbar
+#### Color Navbar
 ```javascript
 navbar:{
     backgroundColor:'#222',
@@ -87,7 +105,7 @@ navbar:{
 }
 ```
 
-### Brand Name
+#### Change brand Name
 ```javascript
 navbar:{
     brand:'CompanyName'
@@ -100,19 +118,32 @@ navbar:{
 }
 ```
 
-### Drop shadow
+#### Drop shadow
 ```javascript
 navbar:{
     shadow:true // false
 }
 ```
 
-### Right aligned navigation bar
+#### Right aligned items
 ```javascript
 navbar:{
     defaultAlign:'right' // 'left'
 }
 ```
+
+#### Change property after set
+To change the property that is once set, sadly you have to change the whole navbar object. You can do this like `this.navbar = {...this.navbar,color:'#f30'}`. Here's example to change color of links after 2 seconds.
+```javascript
+mounted(){
+  setTimout(()=>{
+    this.navbar = {...this.navbar,color:'#f30'}
+  },2000)
+}
+```
+
+## Header
+Ummm I am still working on this.
 
 
 ## Contribution 
