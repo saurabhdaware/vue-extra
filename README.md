@@ -5,7 +5,7 @@ Ready to add extra components for VueJS.
 
 [![https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-extra)
 
-## Overview
+# Overview
 
 ### Installation
 `npm install --save vue-extra`
@@ -73,7 +73,9 @@ export default {
 ```
 
 
-## REFERRENCE
+# REFERRENCE
+
+## Navbar
 
 ### Coloring Navbar
 ```javascript
@@ -111,6 +113,15 @@ navbar:{
     defaultAlign:'right' // 'left'
 }
 ```
+
+
+## Contribution 
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/saurabhdaware/vue-extra/issues)
+
+- This project is open for contributions you can pick up a task from [Issues](https://github.com/saurabhdaware/vue-extra/issues) or Work on a new feature.
+- Read [CONTRIBUTING.md](http://github.com/saurabhdaware/vue-extra/blob/master/CONTRIBUTING.md) before contributing for complete guide of Contribution and Local Development.
+
 
 ## Screenshot
 ![vue-extra/Navbar](https://res.cloudinary.com/saurabhdaware/image/upload/v1557839367/npm/vue-extra/vueextra.png)
