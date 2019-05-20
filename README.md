@@ -9,8 +9,8 @@ Ready to add extra components for VueJS.
 - [Overview](#overview)
   - [Installation](#installation)
   - [How to use](#how-to-use)
-    - [Inside your template tag](#inside-your-template-tag)
-    - [Inside your script tag](#inside-your-script-tag)
+    - [To paste inside your template tag](#to-paste-inside-your-template-tag)
+    - [To paste inside your script tag](#to-paste-inside-your-script-tag)
 - [Referrence](#referrence)
   - [Navbar](#navbar)
     - [Color Navbar](#color-navbar)
@@ -31,8 +31,8 @@ Ready to add extra components for VueJS.
 ### How to use
 - Currently the module supports vue-extra/Navbar only. However I will be adding some more elements in future.
 
-#### Paste inside your template tag
-```html
+#### To paste inside your template tag
+```css
 ...
 <Navbar :navbar="navbar" :style={fontFamily:'arial'}></Navbar>
 ...
@@ -41,7 +41,7 @@ Ready to add extra components for VueJS.
 variable "navbar" is defined below in javascript code
 
 
-#### Paste inside your script tag
+#### To paste inside your script tag
 Full Example :
 ```javascript
 import Navbar from 'vue-extra/Navbar'
