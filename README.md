@@ -1,9 +1,12 @@
 # vue-extra
 Ready to add extra components for VueJS.
 
-[![NPM Version](https://badge.fury.io/js/vue-extra.svg?style=flat)](https://npmjs.org/package/vue-extra)
+[![npm Package](https://img.shields.io/npm/v/vue-extra.svg)](https://www.npmjs.org/package/vue-extra) [![downloads per month](http://img.shields.io/npm/dm/vue-extra.svg)](https://www.npmjs.org/package/vue-extra) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/saurabhdaware/vue-extra/issues) [![License](https://img.shields.io/npm/l/vue-extra.svg)](https://github.com/saurabhdaware/vue-extra/blob/master/LICENSE)
+
 
 [![https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/vue-extra.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-extra)
+
+
 
 # Table of Contents
 - [Overview](#overview)
